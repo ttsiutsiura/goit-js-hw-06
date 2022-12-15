@@ -14,13 +14,15 @@ function createBoxes(amount) {
     const boxEl = document.createElement("div");
 
     collection.push(boxEl);
-  }
 
-  collection[0].style.backgroundColor = getRandomHexColor();
-  collection[0].style.width = "30px";
-  collection[0].style.height = "30px";
+    collection[0].style.backgroundColor = getRandomHexColor();
+    collection[0].style.width = "30px";
+    collection[0].style.height = "30px";
 
-  for (let i = 1; i < collection.length; i++) {
+    if (i === 0) {
+      continue;
+    }
+
     collection[i].style.width =
       Number.parseInt(collection[i - 1].style.width) + 10 + "px";
     collection[i].style.height =
